@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Follow</title>
+</head>
+<header>
+    <h1>Оформление подписки</h1>
+</header>
+<form id="follow">
+    <div>
+        <label for="name">Имя:</label>
+        <input type="text" id="name" required placeholder="Введите имя">
+        <span id="nameError"></span>
+    </div>
+    <div>
+        <label for="email">Электронная почта:</label>
+        <input type="email" id="email" required placeholder="Введите email">
+    </div>
+    <div>
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" required placeholder="Введите номер телефона">
+        <span id="phoneError"></span>
+    </div>
+    <div class="yy">
+        <input type="checkbox" id="agreeCheckbox" required>
+        <label for="agreeCheckbox">Согласен на обработку персональных данных</label>
+        <span id="agreeError"></span>
+    </div>
+    <button id="subscribeBtn" disabled class="button">Подписаться</button>
+</form>
+<div id="successMessage" class="hidden">Данные успешно отправлены!</div>
+
+<script>
+    const form = document.getElementById('follow');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const subscribeBtn = document.getElementById('subscribeBtn');
+    const successMessage = document.getElementById('successMessage');
+    const nameError = document.getElementById('nameError');
+    const phoneError = document.getElementById('phoneError');
+    const agreeCheckbox = document.getElementById('agreeCheckbox');
+    const agreeError = document.getElementById('agreeError');
+
+    const nameRegex = /^[а-яА-ЯёЁa-zA-Z\s]+$/;
+    const phoneRegex = /^\+7[-\s()]*\(?\d{3}\)?[-\s()]*\d{3}[-\s()]*\d{4}$/;
+
+    nameInput.addEventListener('input', () => validateInput(nameInput, nameRegex, nameError));
+    phoneInput.addEventListener('input', () => validateInput(phoneInput, phoneRegex, phoneError));
+    agreeCheckbox.addEventListener('change', enableButton);
+
+    form.addEventListener('submit', handleSubmit);
+
+    function validateInput(inputField, regex, errorElement) {
+        const value = inputField.value.trim();
+        if (value === '') {
+            errorElement.textContent = 'Поле не должно быть пустым';
+            inputField.style.border = '1px solid red';
+        } else if (!regex.test(value)) {
+            errorElement.textContent = getErrorMessage(inputField.id);
+            inputField.style.border = '1px solid red';
+        } else {
+            errorElement.textContent = '';
+            inputField.style.border = '';
+        }
+        enableButton();
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        if (form.checkValidity()) {
+            const formData = {
+                name: nameInput.value,
+                email: emailInput.value,
+                phone: phoneInput.value
+            };
+
+
+            successMessage.classList.remove('hidden');
+            form.classList.add('hidden');
+
+        }
+    }
+
+
+    function getErrorMessage(fieldId) {
+        if (fieldId === 'name') return 'В поле имени допускаются только буквы и пробелы';
+        else if (fieldId === 'phone') return 'Номер телефона должен быть в формате +7 (XXX) XXX-XX';
+        return 'Недопустимые символы';
+    }
+
+    function enableButton() {
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const email = emailInput.value.trim();
+        const agree = agreeCheckbox.checked;
+
+        subscribeBtn.disabled = !(name && phone && email && agree);
+
+        if (!agree) {
+            agreeError.textContent = 'Необходимо дать согласие на обработку персональных данных';
+        } else {
+            agreeError.textContent = '';
+        }
+    }
+
+
+</script>

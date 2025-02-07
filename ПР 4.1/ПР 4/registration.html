@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <h1>Регистрация</h1>
+</header>
+
+<body>
+    <div class="buttonback">
+        <a href="PR4.html" class="button">Назад</a>
+    </div>
+    <form>
+        <label for="login">Логин (email или телефон):</label>
+        <input type="text" id="login" name="login" placeholder="Введите email или телефон" required>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+
+        <label for="confirmPassword">Подтвердите пароль:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Подтвердите пароль" required>
+
+        <label for="lastName">Фамилия:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Введите фамилию" required>
+
+        <label for="firstName">Имя:</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Введите имя" required>
+
+        <label for="middleName">Отчество:</label>
+        <input type="text" id="middleName" name="middleName" placeholder="Введите отчество">
+
+        <label for="birthDate">Дата рождения:</label>
+        <input type="date" id="birthDate" name="birthDate">
+
+        <label>Пол:</label>
+        <div class="gender">
+            <input type="radio" value="male">
+            <label for="male">Мужской</label>
+            <input type="radio" value="female">
+            <label for="female">Женский</label>
+        </div>
+        <label for="phone">Телефон:</label>
+        <input type="tel" placeholder="Введите телефон">
+
+        <label for="address">Адрес:</label>
+        <textarea placeholder="Введите адрес"></textarea>
+
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Введите email">
+
+        <label for="occupation">Род занятий:</label>
+        <input type="text" placeholder="Введите род занятий">
+
+        <label for="education">Образование:</label>
+        <select name="education">
+            <option value="secondary">Основное общее (неполное среднее)</option>
+            <option value="higher">Среднее общее (полное среднее)</option>
+            <option value="secondary">Среднее профессиональное</option>
+            <option value="secondary">Высшее образование</option>
+        </select>
+
+        <label>Интересы:</label>
+        <div class="interests">
+                <input type="checkbox" id="interest1" name="interests[]" value="reading" checked>
+                <label for="interest1">Чтение</label>
+                <input type="checkbox" id="interest2" name="interests[]" value="sports">
+                <label for="interest2">Спорт</label>
+                <input type="checkbox" id="interest3" name="interests[]" value="music">
+                <label for="interest3">Музыка</label>
+                <input type="checkbox" id="interest4" name="interests[]" value="travel">
+                <label for="interest4">Путешествия</label>
+            </div>
+        </div>
+
+
+        <label for="languages">Языки (через запятую):</label>
+        <input type="text" placeholder="Введите языки">
+
+        <label for="maritalStatus">Семейное положение:</label>
+        <select>
+            <option value="single">Холост/Не замужем</option>
+            <option value="married">Женат/Замужем</option>
+        </select>
+
+        <label for="children">Дети:</label>
+        <input type="number" min="0" placeholder="Количество детей">
+
+        <label for="Info">Дополнительная информация:</label>
+        <textarea placeholder="Введите дополнительную информацию"></textarea>
+        <div class="button">
+            <a href="change.html" class="button">Зарегистрироваться</a>
+        </div>
+    </form>
+
+</body>
+
+</html>

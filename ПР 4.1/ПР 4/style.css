@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  font-family: "Kreon", serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e9f5ec;
+  color: #333;
+}
+
+header {
+  background-color: #333d36;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
+.buttonsmain {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #577a58;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.buttonmain {
+  font-size: 22px;
+  padding: 15px 15px;
+  background-color: #577a58;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+  display: block; 
+  margin: 10px;
+}
+
+.buttonmain:hover {
+background-color: #44644c;
+}
+
+
+.button:hover {
+  background-color: #315833;
+}
+
+footer {
+  background-color: #333d36;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+form {
+  font-family: "Kreon", serif;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "Kreon", serif;
+}
+.gender {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.gender input[type="radio"] {
+ margin: 0;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  font-family: "Kreon", serif;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #1a4425;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: rgb(218, 228, 223);
+  font-size: 16px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+button[type="submit"] {
+  background-color: #456646;
+  color: #fff;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.interests {
+  display: flex;
+  align-items: center;
+}
+
+button[type="submit"]:hover {
+  background-color: #365538;
+}
+
+.buttonback{
+  padding: 10px;
+  margin: 20px 0px;
+}
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.button {
+  background-color: #658666;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, font-weight 0.3s ease;
+}
+
+.button:active {
+  animation: buttonAnimation 0.3s forwards;
+  font-weight: bold;
+}
+
+@keyframes buttonAnimation {
+  0% {
+      background-color: #4b664c;
+      font-weight: normal;
+  }
+  100% {
+      background-color: #2e6e2f;
+      font-weight: 800;
+  }
+}
+
+#nameError, #phoneError, #agreeError {
+  margin-top: 5px;
+  color: red;
+}
+
+#successMessage.hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block; 
+  margin-bottom: 5px;
+}
+
+.yy{
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
